@@ -2,10 +2,10 @@
 var EventEmitter = require('events').EventEmitter;
 
 // voting settings
-var PERIOD = 30; // time for the vote to be open, in minutes
-var MIN_VOTES = 5; // minimum number of votes for a decision to be made
+var PERIOD = 1; // time for the vote to be open, in minutes
+var MIN_VOTES = 1; // minimum number of votes for a decision to be made
 
-var MINUTE = 60 * 1000; // (one minute in ms)
+var MINUTE = 30 * 1000; // (one minute in ms)
 
 var decideVoteResult = function(yeas, nays) {
   // vote passes if yeas > nays
@@ -78,6 +78,7 @@ module.exports = function(config, gh) {
     res.setEncoding('utf8');
     res.on('data', function(chunk) {
       kitten += chunk;
+console.log(kitten);
     });
   });
   req.write('');
