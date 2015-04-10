@@ -8,11 +8,11 @@ var events = require('./events.js');
 var sentiment = require('sentiment');
 
 // voting settings
-var PERIOD = 30; // time for the vote to be open, in minutes
+var PERIOD = 1; // time for the vote to be open, in minutes
 var PERIOD_JITTER = 0.2; // fraction of period that is random
-var MIN_VOTES = 5; // minimum number of votes for a decision to be made
+var MIN_VOTES = 1; // minimum number of votes for a decision to be made
 var REQUIRED_SUPERMAJORITY = 0.65;
-var MINUTE = 60 * 1000; // (one minute in ms)
+var MINUTE = 30 * 1000; // (one minute in ms)
 var POLL_INTERVAL = MINUTE * 3; // how often to check the open PRs (in seconds)
 
 var decideVoteResult = function(yeas, nays) {
